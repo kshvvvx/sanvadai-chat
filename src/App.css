@@ -1,0 +1,178 @@
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Better scrollbar */
+.chat-box::-webkit-scrollbar {
+  width: 8px;
+}
+.chat-box::-webkit-scrollbar-track {
+  background: #1c1c1c;
+}
+.chat-box::-webkit-scrollbar-thumb {
+  background: #f5e1a4;
+  border-radius: 10px;
+}
+
+.App {
+  text-align: center;
+  background: linear-gradient(to right, #f5e1a4, #0f0c29); /* Vedic to futuristic */
+  color: white;
+  min-height: 100vh;
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+}
+
+.logo {
+  font-size: 2.5rem;
+  margin: 10px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.chat-box {
+  background: #222;
+  width: 80%;
+  height: 300px;
+  margin: 20px 0;
+  padding: 10px;
+  overflow-y: auto;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #f5e1a4;
+}
+
+input {
+  padding: 10px;
+  width: 60%;
+  border-radius: 5px;
+  border: none;
+  margin-right: 10px;
+  font-size: 1rem;
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.1);
+}
+
+button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(145deg, #f5e1a4, #ffe899);
+  color: #0f0c29;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(245, 225, 164, 0.5);
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  transform: scale(1.05);
+  background: linear-gradient(145deg, #ffe899, #f5e1a4);
+  box-shadow: 0 0 20px rgba(245, 225, 164, 0.8);
+}
+
+/* Glowing red warning animation */
+@keyframes pulseRed {
+  0% {
+    box-shadow: 0 0 5px red;
+  }
+  50% {
+    box-shadow: 0 0 20px red;
+  }
+  100% {
+    box-shadow: 0 0 5px red;
+  }
+}
+
+.flag-warning {
+  animation: pulseRed 1s infinite;
+  padding: 10px;
+  background: #b00020;
+  color: white;
+  border-radius: 10px;
+  font-weight: bold;
+  margin-top: 10px;
+  box-shadow: 0 0 10px red;
+}
+
+/* Slide-in chat bubble animation */
+.chat-bubble {
+  animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mobile responsiveness */
+@media (max-width: 600px) {
+  .App {
+    padding: 10px;
+  }
+
+  .chat-box {
+    width: 95%;
+    height: 250px;
+  }
+
+  input {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  button {
+    width: 100%;
+    margin-top: 5px;
+  }
+}
+
+.landing {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: linear-gradient(to right, #f5e1a4, #0f0c29);
+  color: white;
+}
+
+.logo-wrapper {
+  text-align: center;
+}
+
+.animated-logo {
+  animation: rotateScale 3s ease-in-out infinite;
+  filter: drop-shadow(0 0 10px #f5e1a4);
+}
+
+@keyframes rotateScale {
+  0% { transform: scale(1) rotate(0deg); }
+  50% { transform: scale(1.08) rotate(2deg); }
+  100% { transform: scale(1) rotate(0deg); }
+}
+
+.tagline {
+  font-size: 1.2rem;
+  margin: 10px 0 20px 0;
+  font-style: italic;
+  color: #fff;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+
+}
+
+.visual-alert {
+  animation: redFlash 1.5s ease-in-out;
+}
+
+@keyframes redFlash {
+  0% { box-shadow: 0 0 0px red; }
+  50% { box-shadow: 0 0 25px red; }
+  100% { box-shadow: 0 0 0px red; }
+}
