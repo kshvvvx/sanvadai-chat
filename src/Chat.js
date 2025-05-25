@@ -204,6 +204,18 @@ const Chat = () => {
     return intersection.size / Math.max(set1.size, set2.size);
   };
 
+  const handleDecrypt = (index) => {
+    const msg = messages[index];
+    if (msg.isEncrypted) {
+      const decryptedText = CryptoJS.AES.decrypt(msg.text, SECRET_KEY).toString(CryptoJS.enc.Utf8);
+      setMessages(prev => {
+        const newMessages = [...prev];
+        newMessages[index] = { ...msg, text: decryptedText, isEncrypted: false };
+        return newMessages;
+      });
+    }
+  };
+
   return (
     <div style={{ textAlign: "center", padding: "20px", color: "white" }}>
       {!wallet ? (
